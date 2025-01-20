@@ -15,7 +15,7 @@ function getImageIndex() {
   if (hours >= 7 && hours < 18) {
     // 아침 ~ 낮 (7:00 ~ 18:00)
     return 0;
-  } else if (hours >=20 && hours <5) {
+  } else if (hours >=20 || hours <5) {
     // 새벽 ~ 밤 (20:00 ~ 5:00)
     
     return 2;
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 setInterval(() => {
   const index = getImageIndex();
   document.getElementById("background").src = images[index];
-}, 60 * 60 * 1000); // 1시간
+}, 1000); // 1시간
 
 
 function App() {
@@ -70,6 +70,13 @@ function App() {
         {/* 아이콘 그룹 */}
         <div className="flex space-x-4 mt-6">
           <a
+            href="mailto:cpprhtn@naver.com"
+            className="bg-blue-700 hover:bg-blue-800 rounded-full p-3"
+          >
+            <i className="fas fa-envelope text-white text-xl"></i>
+          </a>
+
+          <a
             href="https://github.com/cpprhtn"
             target="_blank"
             rel="noopener noreferrer"
@@ -77,14 +84,7 @@ function App() {
           >
             <i className="fab fa-github text-white w-6 h-6"></i>
           </a>
-          
-          <a
-            href="mailto:cpprhtn@naver.com"
-            className="bg-blue-700 hover:bg-blue-800 rounded-full p-3"
-          >
-            <i className="fas fa-envelope text-white text-xl"></i>
-          </a>
-          
+
           <a
             href="https://www.linkedin.com/in/cpprhtn"
             target="_blank"
@@ -105,23 +105,24 @@ function App() {
         </div>
 
 
-        {/* 프로젝트 그룹
-        <div className="grid grid-cols-2 gap-4 mt-8">
+        {/* 프로젝트 그룹 */}
+        <div className="grid grid-cols-2 gap-4 mt-4">
           {[
-            { title: "project1", subtitle: "1" },
-            { title: "project2", subtitle: "2" },
-            { title: "project3", subtitle: "3" },
-            { title: "project4", subtitle: "4" },
-          ].map((item, idx) => (
+            { title: "12년간의 다양한 개발 경험", subtitle: "AI(Pytorch, Tensorflow), MLOps(Airflow), ETL(Pandas, Polars), 웹(Front, Backend)" },
+            { title: "대규모 데이터 분석", subtitle: "4TB 규모의 해양 데이터 처리 및 분석, 2GB * 100개의 공장 Raw 데이터 처리 및 분석" },
+            { title: "4년간의 연구 경험", subtitle: "3개의 AI 논문 1저자 및 1건의 프로그램 특허" },
+            { title: "ETRI(한국전자통신연구원) 인턴", subtitle: "환경ICT연구실에서 공장 에너지 관리 시스템 표준화 연구 참여" }
+          ]
+          .map((item, idx) => (
             <div
               key={idx}
-              className="bg-white bg-opacity-10 p-4 rounded-lg hover:bg-opacity-20 transition"
+              className="bg-white bg-opacity-15 p-8 rounded-xl hover:bg-opacity-20 transition"
             >
-              <h3 className="text-sm font-semibold">{item.title}</h3>
-              <p className="text-xs text-opacity-80">{item.subtitle}</p>
+              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <p className="text-sm text-opacity-80">{item.subtitle}</p>
             </div>
           ))}
-        </div> */}
+        </div>
 
         <footer className="custom-footer">
           <p>© 2025 by cpprhtn</p>
