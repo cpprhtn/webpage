@@ -1,12 +1,9 @@
-import React from "react";
-
 const images = [
   "/src/assets/background1.jpg",
   "/src/assets/background2.jpg",
   "/src/assets/background3.jpg",
-]; // 각 시간대에 맞는 이미지 배열
+];
 
-// 시간대를 결정하는 함수
 function getImageIndex() {
   const now = new Date();
   const hours = now.getHours(); // 현재 시간 (0~23)
@@ -32,11 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("background").src = images[index];
 });
 
-// 매 1시간 갱신 (60분마다 체크)
+// 매 1시간 갱신
 setInterval(() => {
   const index = getImageIndex();
   document.getElementById("background").src = images[index];
-}, 1000); // 1시간
+}, 60 * 60 * 1000);
 
 
 function App() {
@@ -59,11 +56,11 @@ function App() {
       <div className="relative z-20 flex flex-col items-center justify-center text-center text-white space-y-4 w-full font-black text-shadow">
         {/* 프로필 이미지 */}
         <img
-          src="/me.jpg" // 프로필 이미지를 경로에 맞게 설정
+          src="/src/assets/me.jpg"
           alt="Profile"
           className="w-24 h-24 rounded-full border-4 border-white"
         />
-        {/* 텍스트 */}
+        
         <p className="text-4xl font-semibold">Junwon Lee</p>
         <p className="text-2xl opacity-100">《Data Analyst》</p>
 
