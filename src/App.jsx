@@ -1,7 +1,7 @@
 const images = [
-  "/src/assets/background1.jpg",
-  "/src/assets/background2.jpg",
-  "/src/assets/background3.jpg",
+  "/public/background1.jpg",
+  "/public/background2.jpg",
+  "/public/background3.jpg",
 ];
 
 function getImageIndex() {
@@ -43,7 +43,7 @@ function App() {
       <div className="absolute inset-0">
         <img
           id="background"
-          src="/src/assets/background1.jpg"
+          src="/public/background1.jpg"
           alt="Background"
           className="w-full h-full object-cover opacity-90"
         />
@@ -56,7 +56,7 @@ function App() {
       <div className="relative z-20 flex flex-col items-center justify-center text-center text-white space-y-4 w-full font-black text-shadow">
         {/* 프로필 이미지 */}
         <img
-          src="/src/assets/me.jpg"
+          src="/public/me.jpg"
           alt="Profile"
           className="w-24 h-24 rounded-full border-4 border-white mt-12"
         />
